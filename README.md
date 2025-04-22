@@ -67,8 +67,8 @@ roles/px_prometheus_config/vars/main.yml
 ```
 
 ```yaml
-pxbackup_namespace: px-backup
-kubeconfig_path: ~/.kube/config
+pxbackup_namespace: central
+kubeconfig_path: ~/.kube/config 
 ```
 
 ---
