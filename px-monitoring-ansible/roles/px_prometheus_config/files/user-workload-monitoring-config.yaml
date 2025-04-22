@@ -10,7 +10,7 @@ data:
       enableAlertmanagerConfig: true
     prometheus:
       retention: 90d
-      retentionSize: 9Gi
+      retentionSize: 8000MB
       volumeClaimTemplate:
         spec:
           storageClassName: px-csi-db
