@@ -16,7 +16,6 @@ This project automates the setup of **Portworx Backup monitoring on OpenShift** 
 ✅ Injects custom Alertmanager configuration and templates  
 ✅ Creates TLS+token secrets for Prometheus & Alertmanager  
 ✅ Uses Ansible best practices (roles, variables, idempotency)  
-✅ Fully API-driven using `kubeconfig`
 
 ---
 
@@ -77,6 +76,10 @@ kubeconfig_path: ~/.kube/config
 ## 📥 Running the Playbook
 
 ### Using default values:
+
+```bash
+Make sure you are logged in via OC command line 
+```
 
 ```bash
 ansible-playbook px-prometheus-playbook.yml
