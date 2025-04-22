@@ -1,0 +1,2 @@
+{{ decoded_alertmanager | regex_replace('(?s)(?:"receivers":.*?"receiver": "Default")', '\g<0>\n"templates":\n- "/etc/alertmanager/config/*.tmpl"') }}
+

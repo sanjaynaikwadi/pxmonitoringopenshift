@@ -1,0 +1,42 @@
+- name: Ensure openshift-monitoring namespace exists
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: openshift-monitoring
+
+- name: Apply cluster-monitoring-config to enable user workload monitoring
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    definition: "{{ lookup('file', 'cluster-monitoring-config.yaml') }}"
+
+
+
+- name: Ensure openshift-user-workload-monitoring namespace exists
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: openshift-user-workload-monitoring
+
+- name: Apply user-workload-monitoring-config ConfigMap
+  kubernetes.core.k8s:
+    kubeconfig: "{{ kubeconfig_path }}"
+    state: present
+    definition: "{{ lookup('file', 'user-workload-monitoring-config.yaml') }}"
+
+
+- name: Update Alertmanager secret to include Portworx email template
+  include_tasks: update_alertmanager_secret.yml
+  tags: alertmanager_update
+
+- name: Create monitoring secrets for PX-Backup
+  import_tasks: create_monitoring_secrets.yml
+

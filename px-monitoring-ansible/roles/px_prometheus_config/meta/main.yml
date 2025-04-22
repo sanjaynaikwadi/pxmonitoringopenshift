@@ -1,0 +1,11 @@
+galaxy_info:
+  role_name: px_prometheus_config
+  author: PX Backup 
+  description: Configure OpenShift Prometheus for Portworx Backup
+  license: MIT
+  min_ansible_version: 2.11
+  platforms:
+    - name: OpenShift
+      versions:
+        - 4.16
+        - 4.18

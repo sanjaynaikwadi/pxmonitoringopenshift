@@ -1,0 +1,5 @@
+kubeconfig_path: "/root/Ansible/px-monitoring-ansible/kubeconfig/ocp-sn-demo-72-kubeconfig"
+restart_prometheus: true
+
+pxbackup_namespace: central
+

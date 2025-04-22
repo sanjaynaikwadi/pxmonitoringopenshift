@@ -1,0 +1,5 @@
+- name: Configure Prometheus for Portworx Backup on OpenShift
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - px_prometheus_config
