@@ -1,6 +1,7 @@
-# PX Monitoring Ansible Automation
+# Portworx Backup Monitoring Ansible Automation
 
 This project automates the setup of **Portworx Backup monitoring on OpenShift** using Ansible. It configures:
+(https://docs.portworx.com/portworx-backup-on-prem/install/configure-prometheus/own-prometheus.html) 
 
 - OpenShift User Workload Monitoring
 - Prometheus and Alertmanager integration
